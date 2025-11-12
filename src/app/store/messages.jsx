@@ -10,17 +10,17 @@ import { persist } from "zustand/middleware";
 // const useStore = create((set) => ({
 //   messages: 1,
 //   setMessages: () =>
-    // -------- Kommentar ----------------------------------------------
-    // -------- state variablen, der medsendes som argument, indeholder det aktuelle state
-    // -------- ({ ... }) er en forkortet syntaks til at returnere et objekt direkte fra en arrow function.
-    // -------- Parenteserne () rundt om {} fortæller JavaScript, at det skal tolkes som et objekt, ikke som en kodeblok.
-    // -------- Kode ---------------------------------------------------
-    // set((state) => ({ messages: state.messages + 1 })),
-  // -------- Ovenstående er eksempel er fra dokumentationen, men det kan også skrives mere genkendeligt:
-  // -------- Kode ---------------------------------------------------
-  // set((state) => {
-  //   return { messages: state.messages + 1 };
-  // }),
+// -------- Kommentar ----------------------------------------------
+// -------- state variablen, der medsendes som argument, indeholder det aktuelle state
+// -------- ({ ... }) er en forkortet syntaks til at returnere et objekt direkte fra en arrow function.
+// -------- Parenteserne () rundt om {} fortæller JavaScript, at det skal tolkes som et objekt, ikke som en kodeblok.
+// -------- Kode ---------------------------------------------------
+// set((state) => ({ messages: state.messages + 1 })),
+// -------- Ovenstående er eksempel er fra dokumentationen, men det kan også skrives mere genkendeligt:
+// -------- Kode ---------------------------------------------------
+// set((state) => {
+//   return { messages: state.messages + 1 };
+// }),
 // }));
 // export default useStore;
 
@@ -57,7 +57,7 @@ const useStore = create(
   persist(
     (set, get) => ({
       messages: 1,
-      increaseMessages: () => set({ messages: get().messages + 1 }),
+      setMessages: () => set({ messages: get().messages + 1 }),
     }),
     {
       name: "message-storage",
